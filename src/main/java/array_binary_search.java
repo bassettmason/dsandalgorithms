@@ -1,7 +1,7 @@
 public class array_binary_search {
 
 
-    public static int search(int[] array, int t){
+    public static int searchd(int[] array, int t){
 
         int n = array.length;
         int l = 0;
