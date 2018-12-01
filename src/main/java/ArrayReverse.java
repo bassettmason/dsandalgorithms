@@ -1,6 +1,6 @@
 public class ArrayReverse {
     public static void main(String[] args) {
-        System.out.println("morning dave");
+
 
         int[] numlist = new int[3];
         numlist[0] = 1;
@@ -11,11 +11,12 @@ public class ArrayReverse {
 
     }
 
-    public static void reverse (int[] numlist) {
+    public static int[] reverse (int[] numlist) {
+        int[] newNumlist = new int[numlist.length];
         for (int i = numlist.length - 1; i>= 0; i--) {
-            System.out.println(numlist[i]);
+            newNumlist[i] = numlist[i];
         }
-
+        return newNumlist;
     }
 
 
