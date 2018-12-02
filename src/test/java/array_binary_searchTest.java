@@ -14,7 +14,7 @@ public class array_binary_searchTest {
         int t = 4;
 
 
-        assertEquals(array_binary_search.searchd(array, t), 3);
+        assertEquals(ArrayBinarySearch.searchd(array, t), 3);
 
     }
 }

@@ -1,4 +1,4 @@
-public class array_binary_search {
+public class ArrayBinarySearch {
 
 
     public static int searchd(int[] array, int t){
