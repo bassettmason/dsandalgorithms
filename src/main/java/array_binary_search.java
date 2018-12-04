@@ -1,6 +1,6 @@
 public class array_binary_search {
 
-
+//make algor
     public static int searchd(int[] array, int t){
 
         int n = array.length;
