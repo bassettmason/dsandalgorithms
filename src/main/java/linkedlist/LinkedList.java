@@ -17,51 +17,88 @@ public class LinkedList {
     }
 
     public void prepend(int value) {
-        Node newNode = new Node(value, null);
+
+
         if (head == null) {
-            head = tail = newNode;
-            curr = head;
-        } else {
-            head = new Node(value, head);
+            head = tail = new Node(value, null);
             curr = head;
         }
+        head = new Node(value, head);
+        curr = head;
+
 
     }
 
     public void append(int value) {
         Node newNode = new Node(value, null);
+
         Node curr = head;
         while(curr!=null)
             if (curr.next == null) {
                 curr.next = newNode;
 
-            } else {
-                curr = curr.next;
+
             }
+            curr = curr.next;
+
     }
 
     public boolean includes(int value) {
-        Node current = this.head;
-        while(current.next != null) {
-            if (current.data == value) {
+        Node curr = this.head;
+        while(curr.next != null) {
+            if (curr.data == value) {
                 return true;
-            } else {
-                current = current.next;
-
             }
+            curr = curr.next;
+
+
 
         }
         return false;
     }
     public void print(){
-        Node current = this.head;
-        while(current.next != null){
+        Node curr = this.head;
+        while(curr != null){
 
-            System.out.print(current.data + " ");
-            current = current.next;
+            System.out.print(curr.data + " ");
+            curr = curr.next;
         }
     }
-    public void insertBefore(){
+    public void insertBefore(int value, int newVal) {
+
+        while( curr.next != null ) {
+
+            if( curr.next.equals(value)) {
+
+                Node newNode = new Node(newVal, curr.next);
+                curr.next = newNode;
+
+                break;
+            }
+
+
+            curr = curr.next;
+        }
+
+    }
+
+    public void insertAfter(int value, int newVal) {
+
+
+        Node curr = head;
+        while( curr.next != null ) {
+
+            if( curr.equals(value)) {
+                Node newNode = new Node(newVal, curr.next);
+                curr.next = newNode;
+
+
+                break;
+            }
+
+
+            curr = curr.next;
+        }
 
     }
 
