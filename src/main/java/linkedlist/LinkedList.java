@@ -4,9 +4,10 @@ import com.sun.jmx.snmp.SnmpMsg;
 import linkedlist.Node;
 
 public class LinkedList {
+
     public Node head;
-    public Node tail;
-    public Node curr;
+
+
 
 
     //create empty linked list
@@ -17,20 +18,14 @@ public class LinkedList {
     }
 
     public void prepend(int value) {
+        Node newNode = new Node(value);
+        newNode.next = this.head;
 
-
-        if (head == null) {
-            head = tail = new Node(value, null);
-            curr = head;
-        }
-        head = new Node(value, head);
-        curr = head;
-
-
+        this.head = newNode;
     }
 
     public void append(int value) {
-        Node newNode = new Node(value, null);
+        Node newNode = new Node(value);
 
         Node curr = head;
         while(curr!=null)
@@ -45,32 +40,30 @@ public class LinkedList {
 
     public boolean includes(int value) {
         Node curr = this.head;
-        while(curr.next != null) {
+        while(curr != null) {
             if (curr.data == value) {
                 return true;
             }
             curr = curr.next;
-
-
-
         }
         return false;
     }
+
     public void print(){
         Node curr = this.head;
         while(curr != null){
 
-            System.out.print(curr.data + " ");
+            System.out.print(curr.data + "\n");
             curr = curr.next;
         }
     }
     public void insertBefore(int value, int newVal) {
-
+        Node curr = this.head;
         while( curr.next != null ) {
 
             if( curr.next.equals(value)) {
 
-                Node newNode = new Node(newVal, curr.next);
+                Node newNode = new Node(newVal);
                 curr.next = newNode;
 
                 break;
@@ -85,11 +78,11 @@ public class LinkedList {
     public void insertAfter(int value, int newVal) {
 
 
-        Node curr = head;
+        Node curr = this.head;
         while( curr.next != null ) {
 
             if( curr.equals(value)) {
-                Node newNode = new Node(newVal, curr.next);
+                Node newNode = new Node(newVal);
                 curr.next = newNode;
 
 
