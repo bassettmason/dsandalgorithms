@@ -12,9 +12,13 @@ public class array_binary_searchTest {
 
 
         int t = 4;
+        int f = 7;
 
+        int u = 1;
 
         assertEquals(ArrayBinarySearch.searchd(array, t), 3);
+        assertEquals(ArrayBinarySearch.searchd(array, f), -1);
+        assertEquals(ArrayBinarySearch.searchd(array, u), 0);
 
     }
 }

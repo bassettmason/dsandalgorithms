@@ -16,11 +16,28 @@ public class LinkedList {
 
     }
 
-    public void insert(int value) {
-        Node curr = new Node (value, this.head);
+    public void prepend(int value) {
+        Node newNode = new Node(value, null);
+        if (head == null) {
+            head = tail = newNode;
+            curr = head;
+        } else {
+            head = new Node(value, head);
+            curr = head;
+        }
 
-        this.head = curr;
+    }
 
+    public void append(int value) {
+        Node newNode = new Node(value, null);
+        Node curr = head;
+        while(curr!=null)
+            if (curr.next == null) {
+                curr.next = newNode;
+
+            } else {
+                curr = curr.next;
+            }
     }
 
     public boolean includes(int value) {
@@ -43,6 +60,9 @@ public class LinkedList {
             System.out.print(current.data + " ");
             current = current.next;
         }
+    }
+    public void insertBefore(){
+
     }
 
 }
