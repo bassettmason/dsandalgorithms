@@ -3,7 +3,11 @@ package linkedlist;
 import com.sun.jmx.snmp.SnmpMsg;
 import linkedlist.Node;
 
+import java.util.Iterator;
+
+
 public class LinkedList {
+
 
     public Node head;
 
@@ -94,5 +98,36 @@ public class LinkedList {
         }
 
     }
+    public int kth_from_end (int k) {
+        Node curr = head;
+        int count = 0;
+        int total = 0;
+        int returnNum = 0;
+        int target = 0;
+
+        while (curr != null) {
+            total++;
+            curr = curr.next;
+        }
+
+        target = (total - k)-1;
+
+        curr= head;
+        while (curr != null) {
+            if(target == count) {
+                returnNum = curr.data;
+
+
+            }
+
+            count++;
+
+            curr = curr.next;
+        }
+
+        return returnNum;
+
+    }
+//
 
 }
