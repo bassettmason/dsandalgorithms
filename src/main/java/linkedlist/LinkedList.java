@@ -128,6 +128,36 @@ public class LinkedList {
         return returnNum;
 
     }
-//
 
+    public Node merge(LinkedList listA, LinkedList listB) {
+        if (listA.head == null && listB.head == null)
+            return null;
+        if (listA.head == null)
+            return listB.head;
+        if (listB.head == null)
+            return listA.head;
+
+        Node currA = listA.head;
+        Node currB = listB.head;
+        Node secondA = currA.next;
+        Node secondB = currB.next;
+
+
+        while(currA != null || currB != null || secondA != null || secondB != null) {
+            currA.next = currB;
+            currB.next = secondA;
+
+            currA = secondA;
+            currB = secondB;
+            if(secondA.next != null || secondB.next != null) {
+                secondA = secondA.next;
+                secondB = secondB.next;
+
+            }
+        }
+        head = listA.head;
+
+        return head;
+
+    }
 }

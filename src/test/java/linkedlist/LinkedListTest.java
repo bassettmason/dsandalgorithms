@@ -78,4 +78,27 @@ public class LinkedListTest {
 
 
     }
+
+//    @Test
+//    public void kth_from_end() {
+//    }
+
+    @Test
+    public void mergeTest() {
+        LinkedList listA = new LinkedList();
+        listA.prepend(2);
+        listA.prepend(3);
+        listA.prepend(5);
+        listA.prepend(9);
+
+        LinkedList listB = new LinkedList();
+        listB.prepend(1);
+        listB.prepend(3);
+        listB.prepend(5);
+        listB.prepend(9);
+
+        Node newHead = merge(listA, listB);
+
+
+    }
 }
