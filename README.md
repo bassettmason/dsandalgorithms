@@ -43,3 +43,24 @@ includes: finds value and returns postion. Big O 1/n
 Print: prints values. Big O n/n
 
 https://github.com/bassettmason/dsandalgorithms/blob/master/src/main/java/linkedlist/LinkedList.java
+
+# Stacks and Queues
+Making a library of functions for stacks and methods.
+
+## Challenge
+for stacks make push pop and peak and for Queue enqueue dequeue
+
+## Approach & Efficiency
+Big O space/time
+push  O1/O
+pop   O1/O
+peak  O1/O
+dequeue O1/O
+enqueue O1/O
+peak O1/O
+
+## API
+push inserts a node
+pop removes and return a node
+peak looks at the top node
+
