@@ -32,13 +32,14 @@ public class LinkedList {
         Node newNode = new Node(value);
 
         Node curr = head;
-        while(curr!=null)
+        while (curr != null) {
             if (curr.next == null) {
                 curr.next = newNode;
 
-
+                break;
             }
             curr = curr.next;
+        }
 
     }
 
@@ -63,17 +64,17 @@ public class LinkedList {
     }
     public void insertBefore(int value, int newVal) {
         Node curr = this.head;
-        while( curr.next != null ) {
+        while( curr != null ) {
 
-            if( curr.next.equals(value)) {
+            if( curr.next.data == value) {
 
                 Node newNode = new Node(newVal);
+                newNode.next = curr.next;
                 curr.next = newNode;
+
 
                 break;
             }
-
-
             curr = curr.next;
         }
 
@@ -83,10 +84,12 @@ public class LinkedList {
 
 
         Node curr = this.head;
-        while( curr.next != null ) {
+        while( curr != null ) {
 
-            if( curr.equals(value)) {
+            if( curr.data == value) {
                 Node newNode = new Node(newVal);
+
+                newNode.next = curr.next;
                 curr.next = newNode;
 
 
@@ -128,6 +131,35 @@ public class LinkedList {
         return returnNum;
 
     }
-//
 
+    public static LinkedList merge(LinkedList listA, LinkedList listB) {
+        LinkedList answer = new LinkedList();
+        if (listA.head == null && listB.head == null)
+            return null;
+        if (listA.head == null)
+            return listB;
+        if (listB.head == null)
+            return listA;
+        answer.head = listA.head;
+        Node nextFromOne = listA.head.next;
+        answer.head.next = listB.head;
+        Node nextFromTwo = listB.head.next;
+        Node lastInAnswer = answer.head.next;
+
+
+        while(nextFromOne != null || nextFromTwo != null) {
+            if(nextFromOne != null) {
+                lastInAnswer.next = nextFromOne;
+                lastInAnswer = lastInAnswer.next;
+                nextFromOne = nextFromOne.next;
+            }
+
+            if(nextFromTwo != null) {
+                lastInAnswer.next = nextFromTwo;
+                lastInAnswer = lastInAnswer.next;
+                nextFromTwo = nextFromTwo.next;
+            }
+        }
+        return answer;
+    }
 }
