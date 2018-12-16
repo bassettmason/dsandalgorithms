@@ -2,37 +2,41 @@ package stacksandqueues;
 
 public class Queue {
     public Node front;
+    public Node last;
 
-    public void stack() {
+    public void queue() {
         this.front = null;
+        this.last = null;
+
     }
 
     public void enqueue(int value) {
+
         Node newNode = new Node(value);
         if (front == null) {
-            front = newNode;
+            front  = last =  newNode;
+
+        } else {
+            last.next = newNode;
+            last = newNode;
         }
-
-        newNode.next = front;
-
     }
 
     public Node dequeue() {
         if (front == null) {
             return null;
+        }else {
+            Node returnNode = front;
+            front = front .next;
+            return returnNode;
         }
-        Node curr = front;
-        Node after = front;
-        after = curr.next;
-        while (after != null) {
-            if (after.next == null) {
-                curr.next = null;
-                front = curr;
-                return after;
-            }
-            after = after.next;
-            curr = curr.next;
+    }
+
+    public Node peek() {
+        if (front == null) {
+            return null;
+        }else {
+            return front;
         }
-        return null;
     }
 }
