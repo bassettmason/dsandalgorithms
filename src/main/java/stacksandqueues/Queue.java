@@ -32,7 +32,7 @@ public class Queue {
         }
     }
 
-    public Node peak() {
+    public Node peek() {
         if (front == null) {
             return null;
         }else {

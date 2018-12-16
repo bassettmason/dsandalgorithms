@@ -14,7 +14,7 @@ public class QueueTest {
     }
 
     @Test
-    public void enqueue() {
+    public void enqueueTest() {
         Queue newQueue = new Queue();
         newQueue.enqueue(4);
         newQueue.enqueue(5);
@@ -26,7 +26,7 @@ public class QueueTest {
     }
 
     @Test
-    public void dequeue() {
+    public void dequeueTest() {
 
         Queue newQueue = new Queue();
         newQueue.enqueue(4);
@@ -61,9 +61,7 @@ public class QueueTest {
         Queue nullQueue = new Queue();
 
 
-        assertEquals(4, newQueue.peak().data);
-        assertEquals(null, nullQueue.peak());
-
-
+        assertEquals(4, newQueue.peek().data);
+        assertEquals(null, nullQueue.peek());
     }
 }
