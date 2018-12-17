@@ -64,3 +64,4 @@ push inserts a node
 pop removes and return a node
 peak looks at the top node
 
+s
