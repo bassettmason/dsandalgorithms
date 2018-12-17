@@ -48,16 +48,16 @@ https://github.com/bassettmason/dsandalgorithms/blob/master/src/main/java/linked
 Making a library of functions for stacks and methods.
 
 ## Challenge
-for stacks make push pop and peak and for Queue enqueue dequeue
+for stacks make push pop and peek and for Queue enqueue dequeue peek
 
 ## Approach & Efficiency
 Big O space/time
-push  O1/O
-pop   O1/O
-peak  O1/O
-dequeue O1/O
-enqueue O1/O
-peak O1/O
+push  O1/O1
+pop   O1/O1
+peek  O1/O1
+dequeue O1/On
+enqueue O1/O1
+peak O1/O1
 
 ## API
 push inserts a node
