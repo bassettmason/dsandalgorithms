@@ -10,20 +10,27 @@ public class BinaryTree {
     public void BinaryTree() {
         root = null;
     }
-    ArrayList<Integer> returnList = new ArrayList<>();
+    ArrayList<Node> returnList = new ArrayList<>();
 
-   public void postorder(Node rootNode){
+    public Node[] postorder(Node rootNode) {
+        return returnList;
+
+
+    }
+    private static ArrayList<Node> postorderHelper(Node rootNode){
 
 
         if (rootNode == null) {
-            return;
+             return new ArrayList<Node>();
         }
-        postorder(rootNode.left);
+        postorderHelper(rootNode.left);
 
-        postorder(rootNode.right);
+        postorderHelper(rootNode.right);
+
+        returnList.add(rootNode);
 
 
-        returnList.add(rootNode.data);
+        ;
     }
 
    public void inorder(Node rootNode){
@@ -33,7 +40,7 @@ public class BinaryTree {
         }
         inorder(rootNode.left);
 
-        returnList.add(rootNode.data);
+        returnList.add(rootNode);
 
         inorder(rootNode.right);
     }
