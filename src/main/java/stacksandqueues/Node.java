@@ -1,11 +1,11 @@
 package stacksandqueues;
 
-public class Node {
+public class Node<T> {
 
-    public int data;
+    public T data;
     public stacksandqueues.Node next;
 
-    public Node(int data) {
+    public Node(T data) {
         this.data = data;
         this.next = null;
     }
