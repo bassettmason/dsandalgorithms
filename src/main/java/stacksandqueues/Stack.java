@@ -1,14 +1,14 @@
 package stacksandqueues;
 
-public class Stack {
-    public Node top;
+public class Stack<T> {
+    public Node<T> top;
     public void stack(){
 
         this.top = null;
     }
 
-    public void push(int value){
-        Node newNode = new Node(value);
+    public void push(T value){
+        Node<T> newNode = new Node<T>(value);
 
         if(top == null){
             top = newNode;
@@ -19,11 +19,11 @@ public class Stack {
 
     }
 
-    public Node pop() {
+    public Node<T> pop() {
         if (top == null) {
             return null;
         }
-        Node popped = top;
+        Node<T> popped = top;
         if (top.next == null){
             top = null;
         }else {
@@ -34,7 +34,7 @@ public class Stack {
         return popped;
     }
 
-    public Node peek() {
+    public Node<T> peek() {
         if (top == null) {
             return null;
         }
