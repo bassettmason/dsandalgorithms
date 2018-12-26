@@ -66,5 +66,46 @@ public class BinaryTree {
         }
 
     }
+
+    public void printBreadthFirst()
+    {
+        int h = height(root);
+        int i;
+        for (i=1; i<=h; i++)
+            printLevel(root, i);
+    }
+
+    public int height(Node root)
+    {
+        if (root == null)
+            return 0;
+        else
+        {
+            // compute  height
+            int lheight = height(root.left);
+            int rheight = height(root.right);
+
+            //grab bigger one
+            if (lheight > rheight)
+                return(lheight+1);
+            else return(rheight+1);
+        }
+    }
+
+    // Print nodes at level
+    public void printLevel (Node root ,int level)
+    {
+        if (root == null)
+            return;
+        if (level == 1)
+            System.out.print(root.data + " ");
+        else if (level > 1)
+        {
+            printLevel(root.left, level-1);
+            printLevel(root.right, level-1);
+        }
+    }
+
+
 }
 
