@@ -4,7 +4,6 @@ import org.junit.Test;
 
 import java.util.ArrayList;
 
-import static javafx.scene.input.KeyCode.T;
 import static org.junit.Assert.*;
 
 public class BinaryTreeTest {
