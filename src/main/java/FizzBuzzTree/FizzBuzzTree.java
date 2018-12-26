@@ -10,23 +10,24 @@
 //        return tree;
 //    }
 //
-//    private void fizzBuzzTreeHelper(Node root){
-//        if(root == null) {
+//    private void fizzBuzzTreeHelper(Node curr){
+//        if(curr == null) {
 //            return;
+//
 //        }
-//        if((Integer) root.data % 15 == 0) {
-//            root.data = "FizzBuzz";
+//        if((Integer)curr.data % 15 == 0) {
+//            curr.data = "FizzBuzz";
 //        }
-//        else if((Integer)root.data % 3 == 0) {
-//            root.data = "Fizz";
+//        else if((Integer)curr.data % 3 == 0) {
+//            curr.data = "Fizz";
 //        }
-//        else if((Integer)root.data % 5 == 0) {
-//            root.data = "Buzz";
+//        else if((Integer)curr.data % 5 == 0) {
+//            curr.data = "Buzz";
 //        }
 //
 //
-//        fizzBuzzTreeHelper(root.left);
-//        fizzBuzzTreeHelper(root.right);
+//        fizzBuzzTreeHelper(curr.left);
+//        fizzBuzzTreeHelper(curr.right);
 //    }
 //
 //}
