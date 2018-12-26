@@ -10,48 +10,42 @@ public class BinarySearchTree {
 
     public void add(int value) {
         Node newNode = new Node(value);
-        root = addHelper( newNode, root );
+        root = recursiveAdd(root, newNode);
     }
 
-    protected Node addHelper( Node newNode, Node curr ) {
-        if(curr == null) {
-            return new Node(newNode);
-        }
-        int compareResult = newNode.data.compareTo(curr.data);
-
-        if(compareResult < 0) {
-            curr.left = addHelper(newNode, curr.left);
-        } else if( compareResult > 0 ) {
-            curr.right = addHelper(newNode, curr.right);
-        }else
-            ;
-            // Duplicate; do nothing
-            return curr;
-
-    }
-
-    public Boolean contains(int value){
-        Node searchNode = new Node (value);
-        return containsHelper(this.root, searchNode);
-
-    }
-
-    protected Boolean containsHelper(Node curr, Node searchNode) {
+    private Node recursiveAdd(Node curr, Node value) {
         if (curr == null) {
+            return new Node(value.data);
+        }
+
+        if (value.compareTo(curr) < 0) {
+            curr.left = recursiveAdd(curr.left, value);
+        } else if (value.compareTo(curr) > 0) {
+            curr.right = recursiveAdd(curr.right, value);
+        } else {
+            return curr;
+        }
+        return curr;
+    }
+
+    public boolean contains( int value){
+        Node newNode = new Node(value);
+        return containsHelper(root, newNode);
+    }
+
+    public boolean containsHelper(Node curr, Node target){
+        if (curr == null){
             return false;
         }
-
-        int compareResult = curr.data.compareTo(searchNode.data);
-
-        if (compareResult < 0) {
-            return containsHelper(curr.left, searchNode);
-        } else if (compareResult > 0) {
-            return containsHelper(curr.right, searchNode);
-        } else {
+        if (target.data == curr.data){
             return true;
         }
-
-
+        return target.compareTo(curr) < 0 ? containsHelper(curr.left, target) : containsHelper(curr.right, target);
     }
 
+
+
 }
+
+
+

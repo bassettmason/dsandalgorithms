@@ -20,7 +20,11 @@ public class BinaryTreeTest {
 
         assertEquals(1,testBinaryTree.root.data);
         assertEquals("hey",testBinaryTree.root.left.data);
-        assertEquals(3,testBinaryTree.root.right.getData());
+        assertEquals(3,testBinaryTree.root.right.data);
+
+        Node j = new Node(3);
+        Node h = new Node (3);
+        assertEquals(0, j.compareTo(h));
     }
 
     @Test
@@ -62,10 +66,10 @@ public class BinaryTreeTest {
         BinaryTree emptyBinaryTree = new BinaryTree();
         ArrayList<Integer> emptyArray = new ArrayList<>();
 
-        assertEquals("Expected: [1, 2, 3]" ,intExpected, intTestBinaryTree.preOrder());
+        assertEquals(intExpected, intTestBinaryTree.preOrder());
         assertEquals(1,intTestBinaryTree.root.data);
         assertEquals(2,intTestBinaryTree.root.left.data);
-        assertEquals(5,intTestBinaryTree.root.right.getData());
+        assertEquals(5,intTestBinaryTree.root.right.data);
         assertEquals(emptyArray,emptyBinaryTree.preOrder());
         assertEquals(intExpected,intTestBinaryTree.preOrder());
         assertEquals(stringExpected,stringTestBinaryTree.preOrder());
@@ -111,7 +115,7 @@ public class BinaryTreeTest {
 
         assertEquals(1,intTestBinaryTree.root.data);
         assertEquals(2,intTestBinaryTree.root.left.data);
-        assertEquals(5,intTestBinaryTree.root.right.getData());
+        assertEquals(5,intTestBinaryTree.root.right.data);
         assertEquals(emptyArray,emptyBinaryTree.postOrder());
         assertEquals(intExpected,intTestBinaryTree.postOrder());
         assertEquals(stringExpected,stringTestBinaryTree.postOrder());
@@ -158,7 +162,7 @@ public class BinaryTreeTest {
 
         assertEquals(1,intTestBinaryTree.root.data);
         assertEquals(2,intTestBinaryTree.root.left.data);
-        assertEquals(5,intTestBinaryTree.root.right.getData());
+        assertEquals(5,intTestBinaryTree.root.right.data);
         assertEquals(emptyArray,emptyBinaryTree.inOrder());
         assertEquals(intExpected,intTestBinaryTree.inOrder());
         assertEquals(stringExpected,stringTestBinaryTree.inOrder());
