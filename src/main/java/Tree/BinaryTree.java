@@ -67,16 +67,14 @@ public class BinaryTree {
 
     }
 
-    public void printBreadthFirst()
-    {
-        int h = height(root);
+    public void printBreadthFirst(BinaryTree tree) {
+        int h = height(tree.root);
         int i;
         for (i=1; i<=h; i++)
-            printLevel(root, i);
+            printLevel(tree.root, i);
     }
 
-    public int height(Node root)
-    {
+    public int height(Node root) {
         if (root == null)
             return 0;
         else
@@ -93,8 +91,7 @@ public class BinaryTree {
     }
 
     // Print nodes at level
-    public void printLevel (Node root ,int level)
-    {
+    public void printLevel (Node root ,int level) {
         if (root == null)
             return;
         if (level == 1)
@@ -105,6 +102,27 @@ public class BinaryTree {
             printLevel(root.right, level-1);
         }
     }
+
+
+    public Integer findMaximum(BinaryTree tree){
+        Node current = tree.root;
+        Node answer = findMaximumHelper(current);
+        return (Integer)answer.data;
+
+    }
+    protected Node findMaximumHelper(Node curr){
+        Node max = curr;
+        if(curr.left != null) {
+            max = Math.max(max.data, findMaximumHelper(curr.left));
+        }
+        if(node.right != null) {
+            max = Math.max(max, maxElem(node.right));
+        }
+        return max;
+    }
+
+
+
 
 
 }
