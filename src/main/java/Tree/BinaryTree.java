@@ -1,62 +1,70 @@
 package Tree;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class BinaryTree {
 
 
     public Node root;
 
-    public void BinaryTree() {
+    public BinaryTree() {
         root = null;
     }
-    ArrayList<Node> returnList = new ArrayList<>();
 
-    public Node[] postorder(Node rootNode) {
-        return returnList;
 
+    public List preOrder(){
+        List results = new ArrayList<>();
+        Node current = root;
+
+        preOrderHelper(current, results);
+        return results;
 
     }
-    private static ArrayList<Node> postorderHelper(Node rootNode){
+//preOrder helper function the preOrder wraps it
+    protected void preOrderHelper(Node root, List values){
+        if(root != null) {
 
-
-        if (rootNode == null) {
-             return new ArrayList<Node>();
+            values.add(root.data);
+            preOrderHelper(root.left, values);
+            preOrderHelper(root.right, values);
         }
-        postorderHelper(rootNode.left);
-
-        postorderHelper(rootNode.right);
-
-        returnList.add(rootNode);
-
-
-        ;
     }
 
-   public void inorder(Node rootNode){
+    public List inOrder(){
+        List result = new ArrayList<>();
+        Node current = root;
 
-        if (rootNode == null) {
-            return;
+        inOrderHelper(current, result);
+        return result;
+
+    }
+    //inOrder helper
+    protected void inOrderHelper(Node root, List values){
+        if (root != null) {
+            inOrderHelper(root.left, values);
+            values.add(root.data);
+            inOrderHelper(root.right, values);
         }
-        inorder(rootNode.left);
-
-        returnList.add(rootNode);
-
-        inorder(rootNode.right);
     }
 
-    public void preorder(Node rootNode){
+    public List postOrder(){
+        List result = new ArrayList<>();
+        Node current = root;
 
-        if (rootNode == null) {
-            return ;
+        postOrderHelper(current, result);
+
+        return result;
+
+    }
+//postOrder Helper
+    protected void postOrderHelper(Node root, List values){
+        if(root != null) {
+            postOrderHelper(root.left, values);
+            postOrderHelper(root.right, values);
+            values.add(root.data);
         }
-        returnList.add(rootNode.data);
 
-        preorder(rootNode.left);
-
-        preorder(rootNode.right);
     }
-
-
 }
 
