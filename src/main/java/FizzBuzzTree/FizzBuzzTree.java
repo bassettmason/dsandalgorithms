@@ -1,32 +1,38 @@
-//package FizzBuzzTree;
-//import Tree.BinaryTree;
-//import Tree.Node;
-//
-//public class FizzBuzzTree {
-//
-//    public BinaryTree fizzBuzzTree(BinaryTree tree){
-//
-//        fizzBuzzTreeHelper(tree.root);
-//        return tree;
-//    }
-//
-//    private void fizzBuzzTreeHelper(Node root){
-//        if(root == null) {
-//            return;
-//        }
-//        if((Integer) root.data % 15 == 0) {
-//            root.data = "FizzBuzz";
-//        }
-//        else if((Integer)root.data % 3 == 0) {
-//            root.data = "Fizz";
-//        }
-//        else if((Integer)root.data % 5 == 0) {
-//            root.data = "Buzz";
-//        }
-//
-//
-//        fizzBuzzTreeHelper(root.left);
-//        fizzBuzzTreeHelper(root.right);
-//    }
-//
-//}
+package FizzBuzzTree;
+import Tree.BinaryTree;
+import Tree.Node;
+
+public class FizzBuzzTree {
+    public Node root;
+
+    public FizzBuzzTree() {
+        root = null;
+    }
+
+
+    public static BinaryTree fizz(BinaryTree tree){
+
+        fizzBuzzTreeHelper(tree.root);
+        return tree;
+    }
+
+    protected static void fizzBuzzTreeHelper(Node curr){
+        if(curr == null) {
+            return;
+        }
+        if((Integer)curr.data % 15 == 0) {
+            curr.data = "FizzBuzz";
+        }
+        else if((Integer)curr.data % 3 == 0) {
+            curr.data = "Fizz";
+        }
+        else if((Integer)curr.data % 5 == 0) {
+            curr.data = "Buzz";
+        }
+
+
+        fizzBuzzTreeHelper(curr.left);
+        fizzBuzzTreeHelper(curr.right);
+    }
+
+}

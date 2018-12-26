@@ -12,7 +12,7 @@ Return the tree with its new values.
 For explicitly-typed languages: Ensure your node values are of type Object, to hold either strings or integers.
 
 ## Approach & Efficiency
-
+iterated through checking modulo each value for 3 5 and both than changing the list and returning it 
 
 ### Space Efficiency
 O(1)
