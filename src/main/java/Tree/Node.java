@@ -25,16 +25,16 @@ public class Node<T extends Comparable<T>> implements Comparable<Node<T>>
     //returns current data
 
     // Returns your T generic type.
-    public T getData()
-    {
-        return this.data;
-    }
+//    public T getData()
+//    {
+//        return this.data;
+//    }
 
     // This now compares to a Node.
 
     public int compareTo(Node<T> other)
     {
-        return data.compareTo(other.getData());
+        return this.data.compareTo(other.data);
     }
 }
 
