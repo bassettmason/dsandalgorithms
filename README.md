@@ -1,7 +1,9 @@
 # data-structures-and-algorithms
 Each challenge with link to specific readme
 
-## Lab 15
+## Challenge
 Code Challenge 15 - [Trees](assets/readmes/Trees.md)
-## Challenge 16
 Code Challenge 16 - [FizzBuzzTree](assets/readmes/FizzBuzzTree.md)
+Code Challenge 17 - [Breadth](assets/readmes/Breadth.md)
+Code Challenge 18 - [FindMaximum](assets/readmes/FindMaximum.md)
+=======
