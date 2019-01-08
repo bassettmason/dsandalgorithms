@@ -27,7 +27,7 @@ Size()
 Returns the total number of nodes in the graph
 
 ## Approach & Efficiency
-Write methods 
+Write methods using node constructor with hashset holding the neighbors
 
 
 
@@ -35,11 +35,12 @@ Write methods
 ## API
 Modifiers/Type     | Class       | Method    | Description |
 |---                    | ---         | ---     |         --- |
+|                    | ---         | ---     |         --- |
 
 
 ### Space Efficiency
-O(x)
+O(1)
 
 ### Time Efficiency:
-O(x)
+O(n)
 

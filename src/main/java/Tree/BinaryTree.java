@@ -104,22 +104,22 @@ public class BinaryTree {
     }
 
 
-    public Integer findMaximum(BinaryTree tree){
-        Node current = tree.root;
-        Node answer = findMaximumHelper(current);
-        return (Integer)answer.data;
-
-    }
-    protected Node findMaximumHelper(Node curr){
-        Node max = curr;
-        if(curr.left != null) {
-            max = Math.max(max.data, findMaximumHelper(curr.left));
-        }
-        if(node.right != null) {
-            max = Math.max(max, maxElem(node.right));
-        }
-        return max;
-    }
+//    public Integer findMaximum(BinaryTree tree){
+//        Node current = tree.root;
+//        Node answer = findMaximumHelper(current);
+//        return (Integer)answer.data;
+//
+//    }
+//    protected Node findMaximumHelper(Node curr){
+//        Node max = curr;
+//        if(curr.left != null) {
+//            max = Math.max(max.data, findMaximumHelper(curr.left));
+//        }
+//        if(node.right != null) {
+//            max = Math.max(max, maxElem(node.right));
+//        }
+//        return max;
+//    }
 
 
 
