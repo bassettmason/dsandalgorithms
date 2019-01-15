@@ -13,14 +13,14 @@ public class Graph<T> {
     }
 
 
-    public static Iterable<Node> breadthFirst(Node input){
+    public static Iterable<Node> breadthFirst(Node startNode){
         LinkedList<Node> queue = new LinkedList<>();
 
         Queue<Node> nodesLeft = new LinkedList<>();
-        nodesLeft.add(input);
+        nodesLeft.add(startNode);
 
         HashSet<Node> nodesDone = new HashSet<>();
-        nodesDone.add(input);
+        nodesDone.add(startNode);
         while(!nodesLeft.isEmpty()){
             Node el = nodesLeft.poll();
             queue.add(el);
