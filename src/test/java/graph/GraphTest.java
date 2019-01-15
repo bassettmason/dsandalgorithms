@@ -116,7 +116,7 @@ public class GraphTest {
         Node<String> D = testGraph.addNode("D");
 
 
-        
+
 
         testGraph.addEdge(1, A, B);
         testGraph.addEdge(1, B, C);
