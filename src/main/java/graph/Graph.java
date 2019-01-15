@@ -1,6 +1,8 @@
 package graph;
 
 import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Set;
 
 public class Graph<T> {
@@ -8,6 +10,29 @@ public class Graph<T> {
 
     public Graph() {
         this.nodes = new HashSet<>();
+    }
+
+
+    public static Iterable<Node> breadthFirst(Node input){
+        LinkedList<Node> queue = new LinkedList<>();
+
+        Queue<Node> nodesLeft = new LinkedList<>();
+        nodesLeft.add(input);
+
+        HashSet<Node> nodesDone = new HashSet<>();
+        nodesDone.add(input);
+        while(!nodesLeft.isEmpty()){
+            Node el = nodesLeft.poll();
+            queue.add(el);
+            for(Edge neighbor : (Set<Edge>) el.neighbors){
+                Node nodeNeighbor = neighbor.node;
+                if(!nodesDone.contains(nodeNeighbor)){
+                    nodesLeft.add(nodeNeighbor);
+                    nodesDone.add(nodeNeighbor);
+                }
+            }
+        }
+        return queue;
     }
 
     public Node addNode(T value) {
@@ -39,6 +64,9 @@ public class Graph<T> {
     public int size() {
         return this.nodes.size();
     }
+
+
+
 
 
 }
