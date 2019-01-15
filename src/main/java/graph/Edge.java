@@ -13,4 +13,6 @@ public class Edge<T> {
         this.weight = weight;
         this.node = node;
     }
+
+
 }
