@@ -132,4 +132,24 @@ public class GraphTest {
 
     }
 
+    @Test
+    public void getEdgeTest() {
+
+        Graph<String> testGraph = new Graph<>();
+        Node<String> A = testGraph.addNode("A");
+        Node<String> B = testGraph.addNode("B");
+        Node<String> C = testGraph.addNode("C");
+
+        testGraph.addEdge(3, A, B);
+        testGraph.addEdge(2, B, C);
+
+
+        String[] cities = { "A", "B",};
+        String[] cities2 = { "A", "C",};
+        String[] cities3 = { "B", "C",};
+
+        assertEquals("True, Price: $3", testGraph.getEdge(cities));
+        assertEquals("False, Price: $0", testGraph.getEdge(cities2));
+        assertEquals("True, Price: $2", testGraph.getEdge(cities3));
+    }
 }

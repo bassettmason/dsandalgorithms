@@ -65,6 +65,34 @@ public class Graph<T> {
         return this.nodes.size();
     }
 
+    public String getEdge(String[] cities){
+        int edgeWeight = 0;
+        Node<T> originCity = null;
+
+        for(Node<T> city : nodes){
+            if(city.value == cities[0]){
+                originCity = city;
+            }
+        }
+        //no city return false
+        if (originCity == null){
+            return "False, " + 0;
+        }
+
+        for(int i = 1; i < cities.length; i++){
+            for(Edge<T> edge : originCity.neighbors){
+                if(edge.node.value == cities[i]){
+                    originCity = edge.node;
+                    edgeWeight += edge.weight;
+                }
+            }
+            if (originCity.value != cities[i]) {
+                return "False, " + "Price: " + "$" + "0";
+            }
+        }
+        return "True, " + "Price: " + "$" + edgeWeight;
+    }
+
 
 
 
