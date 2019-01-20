@@ -22,7 +22,7 @@ public class TreeIntersection {
         }
         if(root1.data == root2.data){
             result.add(root1.data);
-            
+
             treeIntersection(result, root1.left, root2.left);
             treeIntersection(result, root1.right,root2.right);
         }else {result.add("No matchs");}
