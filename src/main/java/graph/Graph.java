@@ -1,9 +1,7 @@
 package graph;
 
-import java.util.HashSet;
-import java.util.LinkedList;
-import java.util.Queue;
-import java.util.Set;
+
+import java.util.*;
 
 public class Graph<T> {
     public Set<Node<T>> nodes;
@@ -34,6 +32,32 @@ public class Graph<T> {
         }
         return queue;
     }
+
+//    public static Iterable<Node> dephtFirst(graph.Node startNode){
+//        LinkedList<Node> returnStack = new LinkedList<>();
+//
+//        Stack<Node> nodesLeft = new Stack<>();
+//        nodesLeft.add(startNode);
+//
+//        HashSet<Node> nodesDone = new HashSet<>();
+//        nodesDone.add(startNode);
+//
+//        while(!nodesLeft.isEmpty()) {
+//            Node el =  nodesLeft.peek();
+//            returnStack.add(el);
+//            for(Edge neighbor : (Set<Edge>) el.neighbors){
+//                el.visited = true;
+//                if (!nodesDone.contains(.getEnd())) {
+//                    dfs.push(n.getEnd());
+//            }
+//            else {
+//                nodesLeft.pop();
+//            }
+//        }
+//        return returnStack;
+//    }
+
+
 
     public Node addNode(T value) {
         Node<T> newNode = new Node<>(value);
