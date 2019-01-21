@@ -133,6 +133,31 @@ public class GraphTest {
     }
 
     @Test
+    public void depthFirst() {
+
+        Graph<String> testGraph = new Graph<>();
+        Node<String> A = testGraph.addNode("A");
+        Node<String> B = testGraph.addNode("B");
+        Node<String> C = testGraph.addNode("C");
+        Node<String> D = testGraph.addNode("D");
+
+
+
+
+        testGraph.addEdge(1, A, B);
+        testGraph.addEdge(1, B, C);
+        testGraph.addEdge(1, B, D);
+        testGraph.addEdge(1, C, D);
+
+        Iterator<Node> iteratorResult = testGraph.depthFirst(A).iterator();
+        assertEquals(A, iteratorResult.next());
+        assertEquals(B, iteratorResult.next());
+        assertEquals(C, iteratorResult.next());
+
+
+    }
+
+    @Test
     public void getEdgeTest() {
 
         Graph<String> testGraph = new Graph<>();

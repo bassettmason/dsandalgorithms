@@ -8,6 +8,6 @@ public class TreeIntersectionTest {
 
     @Test
     public void treeIntersection() {
-        
+
     }
 }

@@ -16,4 +16,4 @@ O(n)
 ### Time Efficiency:
 O(n)
 
-![27_RepeatedWord](../31_DepthFirst.jpg)
+![28_DepthFirst](../28_DepthFirst.jpg)

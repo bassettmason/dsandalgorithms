@@ -33,29 +33,29 @@ public class Graph<T> {
         return queue;
     }
 
-//    public static Iterable<Node> dephtFirst(graph.Node startNode){
-//        LinkedList<Node> returnStack = new LinkedList<>();
-//
-//        Stack<Node> nodesLeft = new Stack<>();
-//        nodesLeft.add(startNode);
-//
-//        HashSet<Node> nodesDone = new HashSet<>();
-//        nodesDone.add(startNode);
-//
-//        while(!nodesLeft.isEmpty()) {
-//            Node el =  nodesLeft.peek();
-//            returnStack.add(el);
-//            for(Edge neighbor : (Set<Edge>) el.neighbors){
-//                el.visited = true;
-//                if (!nodesDone.contains(.getEnd())) {
-//                    dfs.push(n.getEnd());
-//            }
-//            else {
-//                nodesLeft.pop();
-//            }
-//        }
-//        return returnStack;
-//    }
+    public static Iterable<Node> depthFirst(graph.Node startNode){
+        LinkedList<Node> returnStack = new LinkedList<>();
+
+        Stack<Node> nodesLeft = new Stack<>();
+        nodesLeft.push(startNode);
+
+        HashSet<Node> nodesDone = new HashSet<>();
+        nodesDone.add(startNode);
+
+        while(!nodesLeft.isEmpty()) {
+            Node curr =  nodesLeft.pop();
+            returnStack.add(curr);
+            for(Edge neighbor : (Set<Edge>) curr.neighbors){
+                Node neighborNode = neighbor.node;
+                if (!nodesDone.contains(neighborNode)){
+                    nodesLeft.push(neighborNode);
+                    nodesDone.add(neighborNode);
+            }
+
+            }
+        }
+        return returnStack;
+    }
 
 
 
