@@ -14,6 +14,6 @@ Im checking the cities by iterating through the nodes and their neighbors lookin
 O(n)
 
 ### Time Efficiency:
-O(n^2)
+O(n)
 
 ![27_RepeatedWord](../31_GetEdge.jpg)
