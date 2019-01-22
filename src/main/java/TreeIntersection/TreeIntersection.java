@@ -17,7 +17,7 @@ public class TreeIntersection {
     }
 
     public void treeIntersection(Set<Object> result, Node root1, Node root2){
-        if(root1 == null || root2 == null) {
+        if(root1 == null && root2 == null) {
             return;
         }
         if(root1.data == root2.data){
@@ -25,7 +25,7 @@ public class TreeIntersection {
 
             treeIntersection(result, root1.left, root2.left);
             treeIntersection(result, root1.right,root2.right);
-        }else {result.add("No matchs");}
+        }
 
     }
 
