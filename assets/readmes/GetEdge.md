@@ -11,7 +11,7 @@ Im checking the cities by iterating through the nodes and their neighbors lookin
 
 
 ### Space Efficiency
-O(n)
+O(1)
 
 ### Time Efficiency:
 O(n)
