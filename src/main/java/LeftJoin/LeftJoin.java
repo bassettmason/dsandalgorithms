@@ -5,7 +5,7 @@ import java.util.Map;
 
 public class LeftJoin {
 
-    public ArrayList<ArrayList<String>> LeftJoin(Map<String, String> mapLeft, Map<String, String> mapRight) {
+    public ArrayList<ArrayList<String>> leftJoin(Map<String, String> mapLeft, Map<String, String> mapRight) {
         ArrayList<ArrayList<String>> returnFinal = new ArrayList<>();
 
         for (String key : mapLeft.keySet()) {
