@@ -13,4 +13,3 @@ Space: O(N)
 
 
 
-![InsertionSort](../InseritonSort.jpg)
