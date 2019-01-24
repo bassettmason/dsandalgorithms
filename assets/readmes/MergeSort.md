@@ -8,8 +8,8 @@ Write a function that accepts an array of unsorted integers, and returns a sorte
 recursively split into two arrays and call merge method on each half returning a new array
 
 ## Solution
-Time: O(N)
-Space: O(N^2)
+Time: O(n log n)
+Space: O(n)
 
 
 

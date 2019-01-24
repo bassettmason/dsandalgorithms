@@ -18,5 +18,4 @@ Time: O(N)
 Space: O(N)
 
 
-
-![31_RepeatedWord](../31_RepeatedWord.jpg)
+![33_LeftJoin](../33_LeftJoin.jpg)
