@@ -2,10 +2,10 @@
 Code: RadixSort
 
 ## Challenge
-Write a function that accepts an array of integers, and returns an array sorted by a recursive quicksort algorithm.
+Write a function that accepts an array of positive integers, and returns an array sorted by a radix sort algorithm.
 
 ## Approach & Efficiency
-the first val is a pivot and then you have a left and a right array of values that you recursively call again and then merge the left and the right with the pivot in the middles
+sort one digit at at time by least important value to most important value then do it again with the next digit all the way up to the largest digit position. return new array
 
 ## Solution
 Time: O(N) 
